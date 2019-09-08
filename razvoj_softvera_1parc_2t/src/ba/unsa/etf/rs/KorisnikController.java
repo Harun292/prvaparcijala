@@ -121,14 +121,7 @@ public class KorisnikController {
     }
     public boolean provjeriEmail(String email)
     {
-        int indeks=email.indexOf("@");
-        if(indeks<email.length()-1&&indeks>0)
-        {
-            if(((email.charAt(indeks-1)>='a'&&email.charAt(indeks-1)<='z'||email.charAt(indeks-1)>='A'&&email.charAt(indeks-1)<='Z')&&
-            (email.charAt(indeks+1)>='a'&&email.charAt(indeks+1)<='z'||email.charAt(indeks+1)>='A'&&email.charAt(indeks+1)<='Z'))||
-            (email.charAt(indeks-1)>='0'&&email.charAt(indeks-1)<='9'||email.charAt(indeks+1)>='0'&&email.charAt(indeks+1)<='9'))
-                return true;
-        }
+        if(email.charAt(0) != '@' && email.charAt(email.length()-1) != '@' && email.contains("@")) return true;
         return false;
     }
     public boolean provjeriUserName(String user)
